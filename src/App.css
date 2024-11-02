@@ -1,0 +1,53 @@
+.App {
+  background-color: #000;
+  min-height: 100vh;
+  color: #0f0;
+  font-family: 'Courier New', monospace;
+  padding: 20px;
+}
+
+.terminal {
+  border: 1px solid #0f0;
+  padding: 20px;
+  box-shadow: 0 0 10px #0f0;
+}
+
+.loading-text {
+  font-size: 1.2rem;
+}
+
+.blink {
+  animation: blink 1s infinite;
+}
+
+@keyframes blink {
+  0% { opacity: 0; }
+  50% { opacity: 1; }
+  100% { opacity: 0; }
+}
+
+.nav-menu {
+  display: flex;
+  gap: 20px;
+  margin-bottom: 20px;
+}
+
+.nav-menu button {
+  background-color: transparent;
+  border: 1px solid #0f0;
+  color: #0f0;
+  padding: 10px 20px;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+
+.nav-menu button:hover {
+  background-color: #0f0;
+  color: #000;
+}
+
+.main-content {
+  border: 1px solid #0f0;
+  padding: 20px;
+  min-height: 400px;
+}

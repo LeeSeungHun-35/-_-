@@ -1,0 +1,78 @@
+/* 전체 컨테이너 스타일 */
+.main-container {
+    background-color: #1e1e1e;
+    color: #e0e0e0;
+    padding: 2rem;
+    min-height: 100vh;
+  }
+  
+  /* 섹션 카드 스타일 */
+  .section-card {
+    background-color: #2d2d2d;
+    border-radius: 10px;
+    padding: 1.5rem;
+    margin-bottom: 1.5rem;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s ease;
+  }
+  
+  .section-card:hover {
+    transform: translateY(-5px);
+  }
+  
+  /* 섹션 헤더 스타일 */
+  .section-header {
+    display: flex;
+    align-items: center;
+    margin-bottom: 1.5rem;
+    border-bottom: 2px solid #4a4a4a;
+    padding-bottom: 0.5rem;
+  }
+  
+  .section-icon {
+    font-size: 1.5rem;
+    margin-right: 1rem;
+  }
+  
+  .section-title {
+    color: #64ffda;
+    font-size: 1.5rem;
+    margin: 0;
+  }
+  
+  /* 교육 아이템 스타일 */
+  .education-item {
+    background-color: #363636;
+    border-radius: 8px;
+    padding: 1rem;
+    margin-bottom: 1rem;
+    transition: background-color 0.2s ease;
+  }
+  
+  .education-item:hover {
+    background-color: #404040;
+  }
+  
+  .course-name {
+    color: #82aaff;
+    font-size: 1.1rem;
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+    display: block;
+  }
+  
+  .institution-info {
+    display: flex;
+    justify-content: space-between;
+    color: #a0a0a0;
+    font-size: 0.9rem;
+  }
+  
+  @keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+  
+  .section-card {
+    animation: fadeIn 0.5s ease forwards;
+  }

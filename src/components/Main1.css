@@ -1,0 +1,23 @@
+.code-container {
+  background-color: #f8f9fa;
+  padding: 20px;
+  border-radius: 8px;
+  font-family: 'Consolas', monospace;
+}
+
+.code-text {
+  color: #333;
+  line-height: 1.6;
+}
+
+.comment {
+  color: #6c757d;
+}
+
+.keyword {
+  color: #007bff;
+}
+
+.string {
+  color: #28a745;
+}
