@@ -11,13 +11,29 @@ const HomeContainer = styled.div`
   align-items: center;
   justify-content: center;
   padding: 2rem;
+
+  @media (max-width: 768px) {
+    padding: 1.5rem;
+  }
+
+  @media (max-width: 480px) {
+    padding: 1rem;
+  }
 `;
 
 const ContentWrapper = styled.div`
-  max-width: 1200px;
+  max-width: 1300px;
   width: 100%;
   text-align: left;
   padding: 2rem;
+
+  @media (max-width: 768px) {
+    padding: 1.5rem;
+  }
+
+  @media (max-width: 480px) {
+    padding: 1rem;
+  }
 `;
 
 const Title = styled.h1`
@@ -27,6 +43,16 @@ const Title = styled.h1`
   margin-bottom: 1.5rem;
   font-weight: 700;
   line-height: 1.2;
+
+  @media (max-width: 768px) {
+    font-size: 2.8rem;
+    margin-bottom: 1.2rem;
+  }
+
+  @media (max-width: 480px) {
+    font-size: 2.2rem;
+    margin-bottom: 1rem;
+  }
 `;
 
 const Description = styled.div`
@@ -36,6 +62,18 @@ const Description = styled.div`
   line-height: 1.8;
   margin-bottom: 2.5rem;
   max-width: 600px;
+
+  @media (max-width: 768px) {
+    font-size: 1.1rem;
+    line-height: 1.6;
+    margin-bottom: 2rem;
+  }
+
+  @media (max-width: 480px) {
+    font-size: 1rem;
+    line-height: 1.5;
+    margin-bottom: 1.5rem;
+  }
 `;
 
 const HighlightText = styled.span`
@@ -58,6 +96,11 @@ const HighlightText = styled.span`
 const ButtonGroup = styled.div`
   display: flex;
   gap: 1rem;
+
+  @media (max-width: 480px) {
+    flex-direction: column;
+    gap: 0.8rem;
+  }
 `;
 
 const Button = styled.button`
@@ -77,6 +120,17 @@ const Button = styled.button`
     box-shadow: 0 4px 12px rgba(59, 130, 246, 0.2);
     background-color: ${props => props.primary ? '#2563eb' : 'rgba(59, 130, 246, 0.1)'};
   }
+
+  @media (max-width: 768px) {
+    padding: 0.6rem 1.2rem;
+    font-size: 0.95rem;
+  }
+
+  @media (max-width: 480px) {
+    padding: 0.5rem 1rem;
+    font-size: 0.9rem;
+    width: 100%;
+  }
 `;
 
 const CodeBlock = styled.div`
@@ -85,6 +139,14 @@ const CodeBlock = styled.div`
   color: #60a5fa;
   margin-bottom: 1rem;
   padding: 0.5rem 0;
+
+  @media (max-width: 768px) {
+    font-size: 1rem;
+  }
+
+  @media (max-width: 480px) {
+    font-size: 0.9rem;
+  }
 `;
 
 const ListItem = styled.li`
@@ -100,10 +162,30 @@ const ListItem = styled.li`
     left: 0;
     color: #60a5fa;
   }
+
+  @media (max-width: 768px) {
+    font-size: 0.95rem;
+    margin-bottom: 0.4rem;
+    padding-left: 1.2rem;
+  }
+
+  @media (max-width: 480px) {
+    font-size: 0.9rem;
+    margin-bottom: 0.3rem;
+    padding-left: 1rem;
+  }
 `;
 
 const Section = styled.div`
   margin-bottom: 2rem;
+
+  @media (max-width: 768px) {
+    margin-bottom: 1.5rem;
+  }
+
+  @media (max-width: 480px) {
+    margin-bottom: 1.2rem;
+  }
 `;
 
 const SectionTitle = styled.h2`
@@ -112,6 +194,16 @@ const SectionTitle = styled.h2`
   color: #e2e8f0;
   margin-bottom: 1rem;
   font-weight: 600;
+
+  @media (max-width: 768px) {
+    font-size: 1.3rem;
+    margin-bottom: 0.8rem;
+  }
+
+  @media (max-width: 480px) {
+    font-size: 1.1rem;
+    margin-bottom: 0.6rem;
+  }
 `;
 
 function Main1() {
@@ -149,7 +241,7 @@ function Main1() {
         </Title>
         <Description>
           <HighlightText>보안</HighlightText>, <HighlightText>개발</HighlightText>, 
-          <HighlightText> 인공지능</HighlightText> 등 소프트웨어 분야 전반에 관심이 많고 
+          <HighlightText> 인공지능</HighlightText> 등 소프트웨어 분야 전반에 관심 많고 
           다양한 기술을 활용하는 걸 좋아합니다.
         </Description>
 
@@ -163,10 +255,10 @@ function Main1() {
         </Section>
 
         <Section>
-          <SectionTitle>개발경험</SectionTitle>
+          <SectionTitle>개발 프로젝트 경험</SectionTitle>
           <ul>
-            <ListItem>딥페이크 판독 서비스: 프론트, AI모델 개발</ListItem>
-            <ListItem>유튜브 쇼츠: 코어(AI기반 알고리즘 개발 담당)</ListItem>
+            <ListItem>딥페이크 판독 서비스 <br/>프론트, AI모델 개발</ListItem><br/>
+            <ListItem>유튜브 쇼츠 <br/>코어 담당 진행중<br/>(AI기반 알고리즘 개발 담당)</ListItem>
           </ul>
         </Section>
 

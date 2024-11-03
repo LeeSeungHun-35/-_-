@@ -6,6 +6,10 @@ const ProjectContainer = styled.div`
   min-height: 100vh;
   background-color: #0f172a;
   padding: 2rem;
+  
+  @media (max-width: 768px) {
+    padding: 1rem;
+  }
 `;
 
 const ContentWrapper = styled.div`
@@ -13,6 +17,10 @@ const ContentWrapper = styled.div`
   margin: 0 auto;
   padding: 2rem;
   color: #e2e8f0;
+  
+  @media (max-width: 768px) {
+    padding: 1rem;
+  }
 `;
 
 const BackButton = styled.button`
@@ -31,19 +39,42 @@ const BackButton = styled.button`
     box-shadow: 0 4px 12px rgba(59, 130, 246, 0.2);
     background-color: rgba(59, 130, 246, 0.1);
   }
+
+  @media (max-width: 768px) {
+    padding: 0.5rem 1rem;
+    font-size: 0.9rem;
+    margin-bottom: 1.5rem;
+  }
 `;
 
-const VideoContainer = styled.div`
+const ImageContainer = styled.div`
   width: 100%;
-  margin-bottom: 2rem;
+  margin-bottom: 1rem;
   border-radius: 12px;
   overflow: hidden;
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
   background-color: #000;
   aspect-ratio: 16 / 9;
+
+  @media (max-width: 768px) {
+    margin-bottom: 0.8rem;
+    border-radius: 8px;
+  }
 `;
 
-const StyledVideo = styled.video`
+const ImagesSection = styled.div`
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  margin-bottom: 2rem;
+
+  @media (max-width: 768px) {
+    gap: 0.8rem;
+    margin-bottom: 1.5rem;
+  }
+`;
+
+const StyledImage = styled.img`
   width: 100%;
   height: 100%;
   display: block;
@@ -55,16 +86,45 @@ const TechStackSection = styled.div`
   border-radius: 12px;
   padding: 2rem;
   margin-bottom: 2rem;
+
+  @media (max-width: 768px) {
+    padding: 1.5rem;
+    margin-bottom: 1.5rem;
+    border-radius: 8px;
+  }
+
+  @media (max-width: 480px) {
+    padding: 1rem;
+    margin-bottom: 1rem;
+  }
 `;
 
 const SectionTitle = styled.h2`
   font-size: 1.8rem;
   color: #60a5fa;
   margin-bottom: 1.5rem;
+
+  @media (max-width: 768px) {
+    font-size: 1.4rem;
+    margin-bottom: 1.2rem;
+  }
+
+  @media (max-width: 480px) {
+    font-size: 1.2rem;
+    margin-bottom: 1rem;
+  }
 `;
 
 const TechCategory = styled.div`
   margin-bottom: 1.5rem;
+
+  @media (max-width: 768px) {
+    margin-bottom: 1.2rem;
+  }
+
+  @media (max-width: 480px) {
+    margin-bottom: 1rem;
+  }
 
   &:last-child {
     margin-bottom: 0;
@@ -76,6 +136,16 @@ const CategoryTitle = styled.h3`
   font-size: 1.2rem;
   margin-bottom: 0.8rem;
   font-weight: 600;
+
+  @media (max-width: 768px) {
+    font-size: 1.1rem;
+    margin-bottom: 0.6rem;
+  }
+
+  @media (max-width: 480px) {
+    font-size: 0.95rem;
+    margin-bottom: 0.5rem;
+  }
 `;
 
 const TechList = styled.ul`
@@ -90,6 +160,7 @@ const TechItem = styled.li`
   padding-left: 1.5rem;
   position: relative;
   line-height: 1.6;
+  font-size: 1rem;
 
   &:last-child {
     margin-bottom: 0;
@@ -101,33 +172,47 @@ const TechItem = styled.li`
     left: 0;
     color: #60a5fa;
   }
+
+  @media (max-width: 768px) {
+    font-size: 0.9rem;
+    padding-left: 1.2rem;
+    margin-bottom: 0.4rem;
+    line-height: 1.5;
+  }
+
+  @media (max-width: 480px) {
+    font-size: 0.85rem;
+    padding-left: 1rem;
+    margin-bottom: 0.3rem;
+    line-height: 1.4;
+  }
 `;
 
 function Projects() {
   const navigate = useNavigate();
-  const videoPath = process.env.PUBLIC_URL + '/videos/test.mp4';
+  const imagePath1 = process.env.PUBLIC_URL + '/videos/project1.jpg';
+  const imagePath2 = process.env.PUBLIC_URL + '/videos/project2.jpg';
+  const imagePath3 = process.env.PUBLIC_URL + '/videos/project3.jpg';
 
   return (
     <ProjectContainer>
       <ContentWrapper>
         <BackButton onClick={() => navigate('/')}>← 돌아가기</BackButton>
         
-        <VideoContainer>
-          <StyledVideo 
-            muted 
-            autoPlay 
-            loop 
-            playsInline
-            preload="auto"
-            controlsList="nodownload"
-          >
-            <source src={videoPath} type="video/mp4" />
-            Your browser does not support the video tag.
-          </StyledVideo>
-        </VideoContainer>
+        <ImagesSection>
+          <ImageContainer>
+            <StyledImage src={imagePath1} alt="Deepfake Project 1" />
+          </ImageContainer>
+          <ImageContainer>
+            <StyledImage src={imagePath2} alt="Deepfake Project 2" />
+          </ImageContainer>
+          <ImageContainer>
+            <StyledImage src={imagePath3} alt="Deepfake Project 3" />
+          </ImageContainer>
+        </ImagesSection>
 
         <TechStackSection>
-          <SectionTitle>딥페이크 판독 서비스 기술 스택</SectionTitle>
+          <SectionTitle>딥페이크 판독 서비스 사용 기술 스택</SectionTitle>
           
           <TechCategory>
             <CategoryTitle>프로그래밍 언어</CategoryTitle>
@@ -158,6 +243,7 @@ function Projects() {
             <TechList>
               <TechItem>FaceForensics++</TechItem>
               <TechItem>User-uploaded real/fake videos</TechItem>
+              <TechItem>깃허브, 캐글 등 커뮤니티 데이터셋</TechItem>
             </TechList>
           </TechCategory>
 
